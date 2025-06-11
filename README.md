@@ -1,225 +1,117 @@
-# MERN Stack Order and Inventory Management Application
+# 🛍️ Inventory Management System
 
-This project is an order and inventory management application built using the MERN (MongoDB, Express.js, React.js, Node.js) stack. It features user authentication, product management, order processing, inventory management, and statistics generation functionalities.
+A modern, full-stack inventory management system built with the MERN stack (MongoDB, Express.js, React.js, Node.js). This application helps businesses manage their products, orders, and inventory efficiently.
 
+## ✨ Features
 
-## Table of Contents
-1. [Features](#features)
-2. [Folder Structure](#folder-structure)
-3. [Setup](#setup)
-4. [Backend](#backend)
-5. [Frontend](#frontend)
-6. [API Documentation](#api-documentation)
+- 🔐 Secure user authentication and authorization
+- 📦 Product management with categories and subcategories
+- 📊 Real-time inventory tracking
+- 🛒 Order processing and management
+- 📈 Analytics and reporting dashboard
+- 🎨 Modern, responsive UI with Tailwind CSS
 
-## Features
-- User authentication with sign-up and login functionality.
-- CRUD operations for managing products.
-- Place orders and view order history.
-- Inventory management with add, remove, and update operations.
-- Statistics generation for orders, users, and inventory.
+## 🚀 Quick Start
 
-## UI Images
-### Landing Page
-![Landing Page](./frontend/public/images/landingPage.png)
-![User Registration](./frontend/public/images/userRegistration.png)
-![Admin Page](./frontend/public/images/adminHome.png)
-![Product Page](./frontend/public/images/productPage.png)
-![Category Page](./frontend/public/images/categoryPage.png)
-![Sub Category Page](./frontend/public/images/subCategoryPage.png)
+### Prerequisites
+- Node.js (v14 or higher)
+- MongoDB
+- npm or yarn
 
-## Folder Structure
-```
-inventory-management-MERN /
-│
-├── backend/
-|    │
-|    ├── auth-service/
-|    │   ├── controllers/
-|    │   │   ├── authController.js
-|    │   │   └── roleController.js
-|    │   ├── models/
-|    │   │   └── userModel.js
-|    │   ├── routes/
-|    │   │   └── authRoutes.js
-|    │   ├── middleware/
-|    │   │   └── authMiddleware.js
-|    │   └── config/
-|    │       └── jwtConfig.js
-|    │
-|    ├── product-service/
-|    │   ├── controllers/
-|    │   │   └── productController.js
-|    │   ├── models/
-|    │   │   └── productModel.js
-|    │   ├── routes/
-|    │   │   └── productRoutes.js
-|    │   └── config/
-|    │       └── databaseConfig.js
-|    │
-|    ├── order-service/
-|    │   ├── controllers/
-|    │   │   └── orderController.js
-|    │   ├── models/
-|    │   │   └── orderModel.js
-|    │   ├── routes/
-|    │   │   └── orderRoutes.js
-|    │   └── config/
-|    │       └── databaseConfig.js
-|    │
-|    ├── inventory-service/
-|    │   ├── controllers/
-|    │   │   └── inventoryController.js
-|    │   ├── models/
-|    │   │   └── inventoryModel.js
-|    │   ├── routes/
-|    │   │   └── inventoryRoutes.js
-|    │   └── config/
-|    │       └── databaseConfig.js
-|    │
-|    ├── statistics-service/
-|    │   ├── controllers/
-|    │   │   └── statisticsController.js
-|    │   ├── models/
-|    │   │   └── statisticsModel.js
-|    │   ├── routes/
-|    │   │   └── statisticsRoutes.js
-|    │   └── config/
-|    │       └── databaseConfig.js
-|    │
-|    └── api-gateway/
-|        ├── routes/
-|        │   ├── authRoutes.js
-|        │   ├── productRoutes.js
-|        │   ├── orderRoutes.js
-|        │   ├── inventoryRoutes.js
-|        │   └── statisticsRoutes.js
-|        ├── middleware/
-|        │   └── authMiddleware.js
-|        └── config/
-|            └── routeConfig.js
-|
-│
-└── frontend/
-    ├── public/
-    │
-    ├── src/
-    │   ├── components/
-    │   │   ├── Auth/
-    │   │   │   ├── SignIn.jsx
-    │   │   │   ├── SignUp.jsx
-    │   │   │   
-    │   │   ├── Products/
-    │   │   │   ├── ProductList.jsx
-    │   │   │   ├── ProductItem.jsx
-    |   |   |
-    │   │   ├── Orders/
-    │   │   │   ├── OrderList.jsx
-    │   │   │   ├── OrderItem.jsx
-    │   │   │   
-    │   │   ├── Inventory/
-    │   │   │   ├── InventoryList.jsx
-    │   │   │   ├── InventoryItem.jsx
-    │   │   │   
-    │   │   └── Statistics/
-    │   │       ├── StatsSummary.jsx
-    │   │       ├── UserStats.jsx
-    │   │       ├── OrderStats.jsx
-    │   │
-    │   ├── pages/
-    │   │   ├── SignInPage.jsx
-    │   │   ├── SignUpPage.jsx
-    │   │   ├── ProductsPage.jsx
-    │   │   ├── OrdersPage.jsx
-    │   │   ├── InventoryPage.jsx
-    │   │   ├── StatisticsPage.jsx
-    │   │
-    │   ├── App.jsx
-    │   ├── index.jsx
-    │   ├── index.html
-    ├── package.json
-    ├── package-lock.json
+### Installation
+
+1. Clone the repository
+```bash
+git clone https://github.com/utpal-kumar-08/inventory-management.git
+cd inventory-management
 ```
 
+2. Install dependencies
+```bash
+# Install backend dependencies
+cd backend
+npm install
 
+# Install frontend dependencies
+cd ../frontend
+npm install
+```
 
-## Setup
-1. Clone the repository.
-    ```bash
-    git clone https://github.com/Sam21sop/inventory-management-MERN.git 
-2. Navigate to the project directory.
-    ```bash 
-    cd inventory-management-MERN
-3. Install backend dependencies:
-    ```bash
-    cd backend 
-    npm install
-4. Install frontend dependencies: 
-    ```bash
-    cd frontend 
-    npm install
-5. Start the backend server:
-    ```bash
-    cd backend
-    npm start
-6. Start the frontend development server: 
-    ```bash
-    cd frontend
-    npm start
-7. Access the application at `http://localhost:3000`.
+3. Set up environment variables
+```bash
+# In backend directory
+cp .env.example .env
+# Edit .env with your configuration
+```
 
+4. Start the development servers
+```bash
+# Start backend (from backend directory)
+npm run dev
 
-## Backend
-The backend is built with Node.js and Express.js. It handles authentication, CRUD operations for products, order processing, inventory management, and statistics generation.
-The backend follows a microservices architecture. Each microservice handles specific functionalities:
+# Start frontend (from frontend directory)
+npm run dev
+```
 
-### Explanation:
-1. **auth-service**: Contains authentication-related functionalities such as sign-up, login, and role management.
-2. **product-service**: Manages products and their attributes, including CRUD operations and search functionality.
-3. **order-service**: Handles order processing and fulfillment, including placing orders and viewing order details.
-4. **inventory-service**: Manages inventory operations such as adding, removing, and updating product inventory.
-5. **statistics-service**: Generates statistics related to orders, users, and inventory.
-6. **api-gateway**: Acts as a single entry point for clients to access various microservices, routes requests to appropriate services, and handles middleware such as authentication.
+The application will be available at:
+- Frontend: http://localhost:3000
+- Backend API: http://localhost:5000
 
-### Technology Used
-    1. Node.js
-    2. Express.js
-    3. MongoDB
-    4. Mongoose
-    6. Json-Web-Token
-    7. cors 
+## 🏗️ Project Structure
 
-### Database Models
-The application utilizes MongoDB for its flexibility and scalability. Here are the database models used:
+```
+├── frontend/          # React frontend application
+│   ├── src/          # Source files
+│   ├── public/       # Static files
+│   └── package.json  # Frontend dependencies
+│
+└── backend/          # Node.js backend application
+    ├── services/     # Microservices
+    ├── config/       # Configuration files
+    └── package.json  # Backend dependencies
+```
 
-- ***User Model***: Represents user data including name, email, and password.
-- ***Product Model***: Stores information about products such as name, description, price, and category.
-- ***Order Model***: Contains details about orders including products, quantities, total amount, and status.
-- ***Inventory Model***: Tracks inventory levels for products.
-- ***Statistics Model***: Stores statistical data related to orders, users, and inventory.
+## 🛠️ Tech Stack
 
-### REST API Endpoints
-The backend APIs are structured based on the microservices architecture. Here's a brief overview:
+### Frontend
+- React.js
+- Tailwind CSS
+- Redux Toolkit
+- React Router
+- Axios
 
-- ***Authentication Service***: Provides endpoints for user sign-up, login, and role management.
-- ***Product Service***: Manages products and exposes CRUD operations.
-- ***Order Service***: Handles order processing, order placement, and order details.
-- ***Inventory Service***: Manages product inventory and provides endpoints for inventory management.
-- ***Statistics Service***: Generates statistics related to orders, users, and inventory.
+### Backend
+- Node.js
+- Express.js
+- MongoDB
+- JWT Authentication
+- Microservices Architecture
 
-Each service follows a RESTful API design pattern with routes organized based on functionality and resource type. Middleware functions are implemented for authentication, access control, and error handling.
+## 📝 API Documentation
 
+The API documentation is available at `/api-docs` when running the backend server. Key endpoints include:
 
+- `/api/auth` - Authentication endpoints
+- `/api/products` - Product management
+- `/api/orders` - Order processing
+- `/api/inventory` - Inventory management
+- `/api/stats` - Analytics and reporting
 
-## Frontend
-The frontend is developed using React.js. It provides a user interface for interacting with the application, including authentication, product management, order placement, and inventory management.
+## 🤝 Contributing
 
-### Technology Used
-    1. React
-    2. Vite
-    3. Tailwind CSS
-    4. Redux Toolkit (RTK)
-    5. React-Router
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-## API Documentation
-For detailed API documentation, refer to the [API Documentation](API_DOCUMENTATION.md) file.
+## 📄 License
 
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+##Contact
+Utpal Kumar(utpal-kumar-08)
+Project link : 
+
+- Thanks to all contributors who have helped shape this project
+- Inspired by modern inventory management systems 
