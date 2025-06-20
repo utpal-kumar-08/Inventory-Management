@@ -7,6 +7,11 @@ import path from 'path';
 import errorHandler from './middleware/errorMiddleware.js';
 import userRoutes from './routes/userRoutes.js';
 import productRoutes from './routes/productRoutes.js';
+const cors = require('cors');
+app.use(cors({
+  origin: 'https://inventory-management-three-peach.vercel.app', // your Vercel frontend URL
+  credentials: true
+}));
 
 
 // instance of server using express
