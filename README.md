@@ -22,7 +22,11 @@ A modern, full-stack inventory management system built with the MERN stack (Mong
 
 1. Clone the repository
 ```bash
+<<<<<<< HEAD
 git clone https://github.com/utpal-kumar-08/inventory-management.git
+=======
+git clone https://github.com/utpal-kumar-08/Inventory-Management.git
+
 cd inventory-management
 ```
 
@@ -110,8 +114,17 @@ The API documentation is available at `/api-docs` when running the backend serve
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ##Contact
+<<<<<<< HEAD
 Utpal Kumar(utpal-kumar-08)
 Project link : 
 
 - Thanks to all contributors who have helped shape this project
 - Inspired by modern inventory management systems 
+=======
+Utpal Kumar
+Github profile: utpal-kumar-08
+Project link : https://github.com/utpal-kumar-08/Inventory-Management.git
+
+- Thanks to all contributors who have helped shape this project
+- Inspired by modern inventory management systems 
+>>>>>>> 2b0a548cbe64318edfa43992eae1d820b0c45f52
