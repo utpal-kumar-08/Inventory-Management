@@ -10,8 +10,15 @@ import Login from "./component/userComponents/Login";
 import Register from "./component/userComponents/Register";
 import ForgotPassword from "./component/userComponents/ForgotPassword";
 import LogoutModal from "./component/userComponents/LogoutModal";
+import React, { useEffect, useState } from "react";
+import { getProducts } from "./api";
 
 function App() {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    getProducts().then(data => setProducts(data));
+  }, []);
 
   const router = createBrowserRouter([
     {
@@ -67,6 +74,11 @@ function App() {
   return (
     <>
       <RouterProvider router={router} />
+      <div>
+        {products.map(product => (
+          <div key={product._id}>{product.name}</div>
+        ))}
+      </div>
     </>
   )
 }
